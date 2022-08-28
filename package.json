@@ -1,0 +1,40 @@
+{
+  "name": "chat-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.ts",
+  "scripts": {
+    "start": "ts-node server/server.ts",
+    "dev": "nodemon server/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danialsyed66/ChatAppBackend.git"
+  },
+  "author": "Danial Syed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danialsyed66/ChatAppBackend/issues"
+  },
+  "homepage": "https://github.com/danialsyed66/ChatAppBackend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.31.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.3",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.7.13",
+    "@types/validator": "^13.7.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  }
+}
