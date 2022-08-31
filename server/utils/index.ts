@@ -1,4 +1,4 @@
-import AppError from './appError';
+import AppError from './AppError';
 import catchAsync from './catchAsync';
 import sendToken from './sendToken';
 
