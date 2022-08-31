@@ -1,10 +1,12 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import http from 'http';
 const cloudinary = require('cloudinary');
 
 dotenv.config({ path: 'server/config/config.env' });
 
 import app from './app';
+import socket from './socket';
 
 process.on('uncaughtException', err => {
   console.log('UNCAUGHT EXCEPTION!!! 💥');
@@ -20,7 +22,11 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.listen(process.env.PORT, () =>
+const server = http.createServer(app);
+
+socket(server);
+
+server.listen(process.env.PORT, () =>
   console.log(
     `Listening on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
   )

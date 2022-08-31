@@ -6,12 +6,22 @@ import { AppError, catchAsync, sendToken } from '../utils';
 import { User } from '../models';
 import { IRequest } from '../interfaces';
 
+export const getUserProfile = (
+  req: IRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user: req.user,
+    },
+  });
+};
+
 export const register = catchAsync(
   async (req: IRequest, res: Response, next: NextFunction) => {
-    const { name, email, password, avatar, role, verification } = req.body;
-
-    let roles = 'user';
-    if (role) roles = 'seller-pending';
+    const { name, email, password, avatar } = req.body;
 
     let avatarResult: any;
     if (avatar)
@@ -33,7 +43,6 @@ export const register = catchAsync(
         : {
             url: 'https://res.cloudinary.com/dlwaao9wl/image/upload/v1655495372/avatars/default_avatar_a47u26.jpg',
           },
-      role: roles,
     });
 
     sendToken(user, res, 201);

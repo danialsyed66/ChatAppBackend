@@ -1,3 +1,5 @@
 import userRouter from './userRouter';
+import conversationRouter from './conversationRouter';
+import messageRouter from './messageRouter';
 
-export { userRouter };
+export { userRouter, conversationRouter, messageRouter };
