@@ -4,7 +4,9 @@
   "description": "",
   "main": "server/server.ts",
   "scripts": {
-    "start": "ts-node server/server.ts",
+    "start": "node dist/server/server.js",
+    "build": "typescript",
+    "start:dev": "ts-node server/server.ts",
     "dev": "nodemon server/server.ts"
   },
   "repository": {
